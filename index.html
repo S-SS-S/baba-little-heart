@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff0f5">
+  <meta name="description" content="اجمعي قلوب بابا لعبة صغيرة مليانة حب">
+  <meta property="og:title" content="اجمعي قلوب بابا">
+  <meta property="og:description" content="لك هدية صغيرة من قلب بابا">
+  <meta property="og:type" content="website">
+  <title>اجمعي قلوب بابا</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="messages.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset="1" stop-color="#fff1f5"/></linearGradient>
+      <linearGradient id="ear" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffbad0"/><stop offset="1" stop-color="#ff7fa8"/></linearGradient>
+      <linearGradient id="heart" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff93b7"/><stop offset="1" stop-color="#f65288"/></linearGradient>
+      <filter id="softShadow" x="-40%" y="-40%" width="180%" height="190%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#d84c81" flood-opacity=".2"/></filter>
+      <symbol id="bunny-art" viewBox="0 0 220 220">
+        <ellipse cx="111" cy="204" rx="70" ry="11" fill="#d76c99" opacity=".13"/>
+        <g filter="url(#softShadow)">
+          <rect x="61" y="5" width="35" height="110" rx="18" fill="url(#fur)" transform="rotate(-13 78 60)"/>
+          <rect x="70" y="16" width="17" height="83" rx="9" fill="url(#ear)" transform="rotate(-13 78 60)"/>
+          <rect x="124" y="5" width="35" height="110" rx="18" fill="url(#fur)" transform="rotate(13 142 60)"/>
+          <rect x="133" y="16" width="17" height="83" rx="9" fill="url(#ear)" transform="rotate(13 142 60)"/>
+          <ellipse cx="111" cy="161" rx="65" ry="45" fill="url(#fur)"/>
+          <ellipse cx="110" cy="110" rx="76" ry="69" fill="url(#fur)"/>
+          <ellipse cx="80" cy="121" rx="18" ry="11" fill="#ffb2c7" opacity=".58"/>
+          <ellipse cx="146" cy="121" rx="18" ry="11" fill="#ffb2c7" opacity=".58"/>
+          <ellipse cx="84" cy="105" rx="7" ry="10" fill="#57404d"/>
+          <ellipse cx="140" cy="105" rx="7" ry="10" fill="#57404d"/>
+          <circle cx="86" cy="101" r="2.6" fill="#fff"/>
+          <circle cx="142" cy="101" r="2.6" fill="#fff"/>
+          <path d="M105 121q6-7 12 0q-6 8-12 0" fill="#f18eae"/>
+          <path d="M111 129q-7 11-15 1m15-1q8 11 15 1" fill="none" stroke="#ae6d82" stroke-width="2.7" stroke-linecap="round"/>
+          <path d="M75 177q-11 20-27 6m101-6q11 20 27 6" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+          <path d="M113 180C65 152 89 130 113 149c24-19 48 3 0 31Z" fill="url(#heart)" transform="translate(0 -4) scale(1 1.13)" />
+          <ellipse cx="74" cy="187" rx="23" ry="13" fill="#fff5f8"/>
+          <ellipse cx="151" cy="187" rx="23" ry="13" fill="#fff5f8"/>
+        </g>
+        <g fill="#fff" opacity=".95"><circle cx="178" cy="52" r="3"/><path d="M181 37v10m-5-5h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></g>
+      </symbol>
+      <symbol id="heart-art" viewBox="0 0 48 44"><path d="M24 41C15 34 3 25 3 15A12 12 0 0 1 24 8a12 12 0 0 1 21 7c0 10-12 19-21 26Z" fill="url(#heart)"/><path d="M10 13q4-7 11-2" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".72"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient-heart h1"></span><span class="ambient-heart h2"></span><span class="ambient-heart h3"></span>
+    <span class="ambient-heart h4"></span><span class="ambient-heart h5"></span>
+    <span class="star s1">✦</span><span class="star s2">✦</span><span class="star s3">✦</span><span class="star s4">✦</span>
+  </div>
+
+  <main id="app">
+    <section id="welcome" class="screen welcome-screen" aria-labelledby="welcomeTitle">
+      <div class="shell welcome-shell">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> هدية صغيرة لحبيبة بابا <span class="eyebrow-dot"></span></div>
+        <div class="welcome-art" aria-hidden="true">
+          <span class="art-halo"></span><span class="welcome-cloud cloud-a"></span><span class="welcome-cloud cloud-b"></span>
+          <span class="art-flower flower-a">✿</span><span class="art-flower flower-b">✿</span>
+          <svg class="bunny welcome-bunny" viewBox="0 0 220 220"><use href="#bunny-art"></use></svg>
+          <span class="art-spark spark-a">✧</span><span class="art-spark spark-b">✧</span>
+        </div>
+        <h1 id="welcomeTitle">اجمعي <span>قلوب بابا</span></h1>
+        <div class="welcome-copy" aria-label="رسالة من بابا">
+          <p>يا حبيبة بابا قلبي تفرق لقلوب صغيييرة</p>
+          <p>ابيك تجمعينها كلها وكل ما جمعتي قلوب اكثر بقول لك سر من اسراري</p>
+          <p>يلا يا دنيتي وريني شطارتككك</p>
+        </div>
+        <button id="startButton" class="primary-button welcome-button" type="button">ابدئي اللعب يا حبيبة بابا <span class="button-heart" aria-hidden="true"></span></button>
+        <p class="little-note">لعبة صغيرة معمولة بكل الحب</p>
+      </div>
+    </section>
+
+    <section id="game" class="screen game-screen" hidden aria-label="لعبة اجمعي القلوب">
+      <div class="shell game-shell">
+        <div class="game-header">
+          <div class="header-brand"><span class="brand-heart" aria-hidden="true"></span><span>قلوب بابا</span></div>
+          <button id="muteButton" type="button" class="icon-button" aria-label="كتم الصوت" aria-pressed="false">
+            <svg id="soundIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path class="sound-wave" d="M16 9a4 4 0 0 1 0 6m2-9a8 8 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <div class="progress-card">
+          <div class="progress-top"><span>قلوب بابا اللي جمعتيها</span><strong id="counter" aria-live="polite"><b>0</b> <small>/ 30</small></strong></div>
+          <div class="progress-track" role="progressbar" aria-label="تقدم جمع القلوب" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0" id="progressTrack"><div id="progressFill" class="progress-fill"></div></div>
+          <div id="remaining" class="progress-bottom">باقي 30 قلب يا شطورة</div>
+        </div>
+
+        <div id="world" class="world" aria-label="حركي الارنب عشان تجمعين القلوب" tabindex="0">
+          <div class="world-sky" aria-hidden="true">
+            <span class="world-cloud world-cloud-1"></span><span class="world-cloud world-cloud-2"></span>
+            <span class="world-star ws1">✦</span><span class="world-star ws2">✦</span><span class="world-star ws3">✦</span>
+            <span class="world-sun"></span>
+          </div>
+          <div class="distant-hill hill-1" aria-hidden="true"></div><div class="distant-hill hill-2" aria-hidden="true"></div>
+          <div class="ground" aria-hidden="true">
+            <span class="ground-flower f1">✿</span><span class="ground-flower f2">✿</span><span class="ground-flower f3">✿</span>
+            <span class="ground-flower f4">✿</span><span class="ground-flower f5">✿</span>
+          </div>
+          <div id="heartsLayer" class="hearts-layer" aria-hidden="true"></div>
+          <div id="particlesLayer" class="particles-layer" aria-hidden="true"></div>
+          <div id="player" class="player" style="left:50%" aria-hidden="true">
+            <svg class="bunny play-bunny" viewBox="0 0 220 220"><use href="#bunny-art"></use></svg>
+            <span class="player-shadow"></span>
+          </div>
+        </div>
+
+        <p class="game-instruction">حركي الارنب يمين ويسار واجمعي القلوب</p>
+        <div class="controls" aria-label="ازرار تحريك الارنب">
+          <button id="rightButton" class="control-button" type="button" aria-label="تحرك يمين"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+          <span class="controls-hint">اضغطي باستمرار<br><small>او المسـي مكان القلوب</small></span>
+          <button id="leftButton" class="control-button" type="button" aria-label="تحرك يسار"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <div id="milestoneOverlay" class="overlay" hidden role="dialog" aria-modal="true" aria-labelledby="milestoneHeading">
+      <div class="message-card">
+        <div class="message-decoration" aria-hidden="true"><span>✦</span><span class="message-heart"></span><span>✦</span></div>
+        <p id="milestoneHeading" class="message-kicker">رسالة من قلب بابا</p>
+        <div id="milestoneText" class="message-text"></div>
+        <div id="milestoneCount" class="message-count"></div>
+        <button id="continueButton" class="primary-button" type="button">يلا نكمل يا بابا</button>
+      </div>
+    </div>
+
+    <section id="victory" class="screen victory-screen" hidden aria-labelledby="victoryTitle">
+      <div class="shell victory-shell">
+        <span class="victory-top-icon" aria-hidden="true"><svg viewBox="0 0 48 44"><use href="#heart-art"></use></svg></span>
+        <h2 id="victoryTitle">كل قلوب بابا صارت لك</h2>
+        <div class="victory-art" aria-hidden="true"><svg class="bunny victory-bunny" viewBox="0 0 220 220"><use href="#bunny-art"></use></svg></div>
+        <div id="victoryLines" class="victory-message" aria-live="polite"></div>
+        <button id="nextVictory" type="button" class="primary-button">كملي يا حبيبة بابا</button>
+      </div>
+    </section>
+
+    <section id="gift" class="screen gift-screen" hidden aria-labelledby="giftTitle">
+      <div class="shell gift-shell">
+        <div id="giftIntro">
+          <p class="eyebrow">عشانك انتي وبس</p>
+          <h2 id="giftTitle">باقي لك هدية من بابا</h2>
+          <p class="gift-subheading">اضغطي على الهدية وشوفي وش داخلها</p>
+        </div>
+        <div id="present" class="present" aria-hidden="true">
+          <span class="present-glow"></span><div class="present-lid"><span class="present-lid-ribbon"></span><span class="present-bow bow-left"></span><span class="present-bow bow-right"></span><span class="present-knot"></span></div>
+          <div class="present-body"><span class="present-body-ribbon"></span><span class="present-body-shine"></span></div>
+          <span class="present-spark ps1">✧</span><span class="present-spark ps2">✧</span><span class="present-spark ps3">✧</span>
+        </div>
+        <button id="openGift" type="button" class="primary-button">افتحي هديتك يا حبيبتي</button>
+        <div id="couponReveal" class="coupon-reveal" hidden>
+          <div class="coupon" id="coupon" aria-label="قسيمة دلع مفتوحة">
+            <div class="coupon-corner top-right">✧</div><div class="coupon-corner top-left">✧</div>
+            <span class="coupon-label">هدية خاصة</span>
+            <div class="coupon-heart" aria-hidden="true"><svg viewBox="0 0 48 44"><use href="#heart-art"></use></svg></div>
+            <h3>قسيمة دلع مفتوحة</h3>
+            <p class="coupon-for">لحبيبة بابا وحدهاااا</p>
+            <p class="coupon-reward">بوسات واحضان ودلع بلا حدوووود</p>
+            <div class="coupon-divider"><span></span><i></i><span></span></div>
+            <p class="coupon-expiry">صالحة للاستخدام في اي وقت وما تنتهي ابددددا</p>
+            <div class="coupon-corner bottom-right">✧</div><div class="coupon-corner bottom-left">✧</div>
+          </div>
+          <div class="gift-actions">
+            <button id="saveCoupon" class="secondary-button" type="button">احفظي القسيمة كصورة</button>
+            <button id="replayButton" class="primary-button" type="button">ابي العب مره ثانيه</button>
+          </div>
+          <p id="saveNotice" class="save-notice" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

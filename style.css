@@ -51,3 +51,8 @@ body.playing{overscroll-behavior:none}
 }
 @media (max-height:730px) and (max-width:540px){.welcome-art{height:175px;margin:5px auto -10px}.welcome-bunny{width:180px;height:180px}.art-halo{width:177px;height:157px}.welcome-shell h1{font-size:34px}.welcome-copy{font-size:14px;line-height:1.8}.little-note{margin-top:13px}.world{height:40svh;min-height:260px}.player{width:105px;height:120px}.collectible{bottom:129px}}
 @media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Floating celebratory hearts at the 30-heart finish. */
+.victory-sprinkle{position:fixed;width:15px;height:15px;pointer-events:none;z-index:9;transform:rotate(-45deg);animation:particleBurst 1.55s ease-out both}
+.victory-sprinkle:before,.victory-sprinkle:after{content:"";position:absolute;height:100%;width:100%;border-radius:50%;background:inherit}
+.victory-sprinkle:before{top:-50%;left:0}.victory-sprinkle:after{left:50%;top:0}
